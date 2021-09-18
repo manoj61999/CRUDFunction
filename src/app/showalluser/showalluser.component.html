@@ -1,0 +1,29 @@
+<body>
+    <div *ngIf="correct"> 
+        <ul *ngFor="let items of finduser">
+            <li><b>USER ID:</b>{{items._id}}</li>
+            <li><b>USER NAME:</b>{{items.name}}</li>
+            <li><b>USER AGE :</b>{{items.age}}</li>
+            <li><b>ROLL NO. :</b>{{items.rollno}}</li>
+            <li><b>EMAIL ID :</b>{{items.email}}</li>
+            <li><b>PASSWORD :</b>{{items.password}}</li>
+            <li><b>PHONE    :</b>{{items.phone}}</li>
+        </ul>
+    </div>
+    <div *ngIf="wrong">
+        <p><b>{{finduser}}</b></p>
+    </div>
+
+    <!-- QUERY PARAMS  -->
+
+    <h1>students details</h1>
+    <div>
+        <ul>
+            <li><b>NAME :</b>{{orderby.name}}</li>
+            <li><b>AGE :</b>{{orderby.age}}</li>
+            <li><b>ROLL NO. :</b>{{orderby.rollno}}</li>
+            <li><b>EMAIL ID :</b>{{orderby.email}}</li>
+            <li><b>PASSWORD</b>{{orderby.phone}}</li>
+        </ul>
+    </div>
+</body>

@@ -1,0 +1,32 @@
+<body>
+    <h1>Registration Form</h1>
+    <form [formGroup]="userdata" (ngSubmit)="userdetails()">
+        <label>
+            <input type="text" placeholder="Enter your name" formControlName="name">
+        </label> <br>
+
+        <label>
+            <input type="number" placeholder="enter the age" formControlName="age">
+        </label> <br>
+
+        <label>
+            <input type="number" placeholder="enter the Rollnumber" formControlName="rollno">
+        </label> <br>
+
+        <label>
+            <input type="email" placeholder="enter your emailId" formControlName="email">
+        </label> <br>
+
+        <label>
+            <input type="password" placeholder="enter your password" formControlName="password">
+        </label> <br>
+
+        <label>
+            <input type="number" placeholder="enter your phone number" formControlName="phone">
+        </label> <br>
+
+        <button (click)="UserDataFun()" type="submit" value="button">CREATE</button>
+        <p><b>{{saveuser}}</b></p>
+    </form>
+    
+</body>

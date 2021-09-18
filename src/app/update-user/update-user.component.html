@@ -1,0 +1,24 @@
+<body>
+    <h1>Update form</h1>
+    <form [formGroup]="updatedata" (ngSubmit)="updateFunction()">
+        <label>
+            <input type="email" placeholder="email" formControlName="email">
+        </label> <br>
+
+        <label>
+            <input type="number" placeholder="age" formControlName="age">
+        </label> <br>
+
+        <label>
+            <input type="number" placeholder="rollno" formControlName="rollno">
+        </label> <br>
+
+        <label>
+            <input type="phone" placeholder="phone number" formControlName="phone">
+        </label> <br>
+
+        <button (click)="updateFun()"  type="submit" value="button">UPDATE</button>
+        <p><b>{{userupdate}}</b></p>
+        <hr>
+    </form>
+</body>

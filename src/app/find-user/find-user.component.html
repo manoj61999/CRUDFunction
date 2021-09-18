@@ -1,0 +1,34 @@
+<body>
+    <h1>Find user</h1>
+    <form [formGroup]="finduserdata" (ngSubmit)="FindFunction()">
+        <label>
+            <input type="email" placeholder="email" formControlName="email">
+        </label> <br>
+
+        <button (click)="finduserFun()" type="submit" value="button">FIND USER</button>
+        <div *ngIf="correct"> 
+            <ul *ngFor="let data of userread">
+                <li><b>USER ID:</b>{{data._id}}</li>
+                <li><b>USER NAME:</b>{{data.name}}</li>
+                <li><b>USER AGE :</b>{{data.age}}</li>
+                <li><b>ROLL NO. :</b>{{data.rollno}}</li>
+                <li><b>EMAIL ID :</b>{{data.email}}</li>
+                <li><b>PASSWORD :</b>{{data.password}}</li>
+                <li><b>PHONE    :</b>{{data.phone}}</li>
+            </ul>
+        </div>
+        <div *ngIf="wrong">
+           <p><b>{{userread}}</b></p>
+        </div>
+    </form>
+
+    <h1>Delete Form</h1>
+    <form [formGroup]="deletedata" (ngSubmit)="deleteFunction()">
+        <label>
+            <input type="email" placeholder="email" formControlName="email">
+        </label> <br>
+
+        <button (click)="deleteuserFun()" type="submit" value="button">DELETE</button>
+
+    </form>
+</body>

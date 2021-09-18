@@ -1,0 +1,89 @@
+<body>
+    <h1>PRODUCT DETAILS</h1>
+    <form [formGroup]="productdata" (ngSubmit)="productFunction()">
+        <label>
+            <input type="text" placeholder="productId" formControlName="productId">
+        </label> <br>
+
+        <label>
+            <input type="text" placeholder="productname" formControlName="productname">
+        </label> <br>
+
+        <label>
+            <input type="number" placeholder="EMPnumber" formControlName="EMPno">
+        </label> <br>
+
+        <label>
+            <input type="email" placeholder="email" formControlName="email">
+         </label> <br>
+
+         <label>
+             <input type="text" placeholder="mode of payment" formControlName="mode">
+         </label> <br>
+
+         <label>
+             <input type="phone" placeholder="phone number" formControlName="phone"> 
+         </label> <br>
+
+         <button (click)="productFun()" type="submit" value="button">Create</button>
+         <p><b>{{savepro}}</b></p>
+    </form>
+
+    <!-- LOGIN PRODUCT -->
+    <h1>LOGIN PRODUCT</h1>
+    <form [formGroup]="Logindata" (ngSubmit)="LoginFunction()">
+        <label>
+            <input type="email" placeholder="email" formControlName="email">
+        </label> <br>
+
+        <label>
+            <input type="text" placeholder="empnumber" formControlName="EMPno">
+        </label> <br>
+
+        <button (click)="LoginFun()" type="submit" value="button">LOGIN</button>
+        <p><b>{{loginpro}}</b></p>
+    </form>
+
+    <!-- READ PRODUCT -->
+    <h1>VIEW PRODUCT</h1>
+    <form [formGroup]="readdata" (ngSubmit)="readFunction()">
+        <label>
+            <input type="email" placeholder="email" formControlName="email">
+        </label> <br>
+
+        <button (click)="ReadproductFun()" type="submit" value="button">FIND</button>
+        <div *ngIf="correct">
+            <ul *ngFor="let data of readpro">
+                <li><b>ID              :</b>{{data._id}}</li>
+                <li><b>PRODUCTID       :</b>{{data.productId}}</li>
+                <li><b>PRODUCTNAME     :</b>{{data.productname}}</li>
+                <li><b>EMP NUMBER      :</b>{{data.EMPno}}</li>
+                <li><b>EMAIL ID        :</b>{{data.email}}</li>
+                <li><b>MODE OF PAYMENT :</b>{{data.mode}}</li>
+                <li><b>PHONE NUMBER    :</b>{{data.phone}}</li>
+            </ul>
+        </div>
+        <div *ngIf="wrong">
+            <p><b>{{readpro}}</b></p>
+        </div>
+    </form>
+
+    <!-- UPDATE PRODUCT -->
+    <h1>UPDATE PRODUCT</h1>
+    <form [formGroup]="updatedata" (ngSubmit)="updateFunction()">
+        <label>
+            <input type="email" placeholder="email" formControlName="email">
+        </label> <br>
+
+        <label>
+            <input type="number" placeholder="phone number" formControlName="phone">
+        </label> <br>
+
+        <label>
+            <input type="text" placeholder="product name" formControlName="productname">
+        </label> <br>
+
+        <button (click)="updateproductFun()" type="submit" value="button">UPDATE PRODUCT</button>
+        <p><b>{{updatepro}}</b></p>
+    </form>
+</body>
